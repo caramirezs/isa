@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Llamar función en main.py</title>
+  </head>
+
+  <body>
+    <h1>Relojiu Temporis</h1>
+
+    <p>Disculpa, ¿podrías decirme la hora con tu Relojiu Temporis? Me gustaría asegurarme de no llegar tarde a mi próxima clase de Pociones.</p>
+
+    <button onclick="callFunction()">Dar la hora</button>
+    <div id="result"></div>
+  </body>
+
+  <script>
+    function callFunction() {
+      fetch('/call_function')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('result').innerHTML = data;
+        });
+    }
+  </script>
+</html>

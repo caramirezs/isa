@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'MagicSchoolTwo';
+    src: url('MagicSchoolTwo.ttf') format('truetype');
+}
+
+body {
+    font-family: 'MagicSchoolTwo', Arial, sans-serif;
+    font-size: 25px;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color:  #D61E1F;
+}
+
+button {
+    font-family: 'MagicSchoolTwo', Arial, sans-serif;
+    font-size: 25px;
+    background-color: #1A472A;
+    border: none;
+    color:  #C0C0C0;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  /* Ajusta el estilo de los elementos según lo necesites */
+}

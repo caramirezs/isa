@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+
+    <p>Felicidades, Isa! También has sido elegida por el Luminaris.</p>
+
+    <br/>
+
+    <img src="{{ url_for('static', filename='lumi.png') }}" alt="Imagen" style="margin-left: 1rem;">
+
+    <br/>
+
+    <p>Ahora puedes elegir entre dos emocionantes aventuras: la PRIMERA AVENTURA consiste en resolver un
+      acertijo en equipo con tus compañeros de Gryffindor y Hufflepuff. Para hacer esto, presiona
+      'Enviar mensaje secreto' y se enviará el acertijo a los participantes. Deberás buscar a tus
+      compañeros de equipo y trabajar juntos para resolver el misterio.</p>
+
+    <p>En la SEGUNDA AVENTURA, tendrás que adentrarte en las profundidades del castillo y encontrar una
+      serie de artilugios mágicos que han aparecido misteriosamente durante la noche. Para comenzar esta
+      misión, presiona 'Encontrar artilugios mágicos' y se revelarán las pistas que te guiarán hacia
+      estos objetos enigmáticos.</p>
+
+    <p>Cuando completes tus aventuras o decidas no continuar con ellas, búscame para seguir con tus desafíos.
+      ¡Buena suerte y que la magia te acompañe!</p>
+
+    <form action="/send_email" method="post">
+      <button type="submit">Enviar correo electrónico a los estudiantes</button>
+    </form>
+
+    <br/>
+
+    <form action="/find_gifts" method="post">
+        <button type="submit">Encontrar artilugios</button>
+    </form>
+
+    <hr>
+
+    <form action="/redirigir" method="post">
+      <label for="texto">Cuando tengas la palabra mágica, la puedes probar aquí:</label>
+      <input type="text" id="texto" name="texto">
+      <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+
+  </body>
+</html>

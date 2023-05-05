@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Encuentra los artilugios</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            padding: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .collage img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>En busca de los artilugios</h1>
+
+    <p>¡Eso es genial! Parece que los elfos domésticos han sido de gran ayuda en su búsqueda de los artilugios mágicos.</p>
+
+    <p>Observa detenidamente las imágenes y analiza las pistas visuales que puedan encontrar en ellas. Estas pistas podrían revelar la ubicación de los artilugios mágicos o proporcionar información adicional sobre su propósito y cómo encontrarlos.</p>
+
+    <div class="collage">
+        <img src="static/img1.png" alt="Imagen 1" onclick="openModal(this)">
+        <img src="static/img2.png" alt="Imagen 2" onclick="openModal(this)">
+        <img src="static/img3.png" alt="Imagen 3" onclick="openModal(this)">
+        <img src="static/img4.png" alt="Imagen 4" onclick="openModal(this)">
+        <img src="static/img5.png" alt="Imagen 5" onclick="openModal(this)">
+        <img src="static/img6.png" alt="Imagen 6" onclick="openModal(this)">
+        <img src="static/img7.png" alt="Imagen 7" onclick="openModal(this)">
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+
+
+    <form action="/" method="get">
+      <button type="submit">Regresar al inicio</button>
+    </form>
+</body>
+</html>
