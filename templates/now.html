@@ -14,15 +14,16 @@
 
     <button onclick="callFunction()">Dar la hora</button>
     <div id="result"></div>
+
+    <form action="/" method="get">
+      <button type="submit">Regresar al inicio</button>
+    </form>
   </body>
 
-  <script>
+<script>
     function callFunction() {
-      fetch('/call_function')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('result').innerHTML = data;
-        });
+        document.getElementById('result').innerHTML = "Puedes ver la hora en el Relojiu Temporis";
+        fetch('/call_function');
     }
-  </script>
+</script>
 </html>
