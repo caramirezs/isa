@@ -124,6 +124,8 @@ def redirigir():
         return redirect('/now')
     elif texto == '06052009':
         return redirect('/luna')
+    elif texto == 'AZ866825':
+        return redirect('/viaje')
     else:
         return redirect('/error')
 
@@ -169,7 +171,7 @@ def pista_biblioteca():
 
         if minutes % 10 == 0:
             process = subprocess.Popen(["python", script_path_2], cwd=script_directory)
-            time.sleep(15)
+            time.sleep(60)
             process.terminate()
         time.sleep(10)
         ciclo += 1
