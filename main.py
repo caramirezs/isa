@@ -9,6 +9,7 @@ from datetime import datetime
 
 script_path = "/home/caramirezs/rpi-rgb-led-matrix/my_clock.py"
 script_path_2 = "/home/caramirezs/rpi-rgb-led-matrix/mensaje1.py"
+script_path_3 = "/home/caramirezs/rpi-rgb-led-matrix/mensaje3.py"
 script_directory = os.path.dirname(script_path)
 
 
@@ -176,6 +177,26 @@ def pista_biblioteca():
 
         if minutes % 10 == 0:
             process = subprocess.Popen(["python", script_path_2], cwd=script_directory)
+            time.sleep(60)
+            process.terminate()
+        time.sleep(10)
+        ciclo += 1
+    return None
+
+
+@app.route('/call_function3', methods=['GET'])
+def call_function2():
+    result = pista_pasaporte()
+    return result
+
+def pista_pasaporte():
+    ciclo = 1
+    while ciclo < 70:
+        now = datetime.now()
+        minutes = now.minute
+
+        if minutes % 20 == 0:
+            process = subprocess.Popen(["python", script_path_3], cwd=script_directory)
             time.sleep(60)
             process.terminate()
         time.sleep(10)

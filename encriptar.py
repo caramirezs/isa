@@ -19,6 +19,6 @@ def encrypt(frase):
     return frase_encriptada
 
 
-frase_original = 'Regresar al inicio'
+frase_original = 'slytherin'
 frase_encriptada = encrypt(frase_original)
 print(frase_encriptada)
