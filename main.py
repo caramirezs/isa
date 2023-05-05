@@ -185,7 +185,7 @@ def pista_biblioteca():
 
 
 @app.route('/call_function3', methods=['GET'])
-def call_function2():
+def call_function3():
     result = pista_pasaporte()
     return result
 
