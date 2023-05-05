@@ -5,8 +5,10 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import subprocess
 import time, os
+from datetime import datetime
 
 script_path = "/home/caramirezs/rpi-rgb-led-matrix/my_clock.py"
+script_path_2 = "/home/caramirezs/rpi-rgb-led-matrix/mensaje1.py"
 script_directory = os.path.dirname(script_path)
 
 
@@ -120,7 +122,7 @@ def redirigir():
     texto = request.form['texto'].lower()
     if texto == 'relojiu temporis':
         return redirect('/now')
-    elif texto == 'luna':
+    elif texto == '06052009':
         return redirect('/luna')
     else:
         return redirect('/error')
@@ -151,7 +153,36 @@ def dar_hora():
     time.sleep(300)
     # Detener el subproceso
     process.terminate()
-    return "La hora la puedes ver en el Relojiu Temporis"
+    return None
+
+
+@app.route('/call_function2', methods=['GET'])
+def call_function1():
+    result = pista_biblioteca()
+    return result
+
+def pista_biblioteca():
+    ciclo = 1
+    while ciclo < 70:
+        now = datetime.now()
+        minutes = now.minute
+
+        if minutes % 10 == 0:
+            process = subprocess.Popen(["python", script_path_2], cwd=script_directory)
+            time.sleep(15)
+            process.terminate()
+        time.sleep(10)
+        ciclo += 1
+
+
+
+    # Ejecutar el script Python ubicado en otra ubicación usando Popen
+    process = subprocess.Popen(["python", script_path], cwd=script_directory)
+    # Esperar algunos segundos (puedes ajustar este tiempo según lo necesites)
+    time.sleep(300)
+    # Detener el subproceso
+    process.terminate()
+    return None
 
 
 if __name__ == '__main__':
