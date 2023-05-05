@@ -173,15 +173,6 @@ def pista_biblioteca():
             process.terminate()
         time.sleep(10)
         ciclo += 1
-
-
-
-    # Ejecutar el script Python ubicado en otra ubicación usando Popen
-    process = subprocess.Popen(["python", script_path], cwd=script_directory)
-    # Esperar algunos segundos (puedes ajustar este tiempo según lo necesites)
-    time.sleep(300)
-    # Detener el subproceso
-    process.terminate()
     return None
 
 
