@@ -124,7 +124,7 @@ def redirigir():
         return redirect('/now')
     elif texto == '06052009':
         return redirect('/luna')
-    elif texto == 'AZ866825':
+    elif texto == 'az866825':
         return redirect('/viaje')
     else:
         return redirect('/error')
