@@ -148,7 +148,7 @@ def dar_hora():
     # Ejecutar el script Python ubicado en otra ubicación usando Popen
     process = subprocess.Popen(["python", script_path], cwd=script_directory)
     # Esperar algunos segundos (puedes ajustar este tiempo según lo necesites)
-    time.sleep(60*5)
+    time.sleep(300)
     # Detener el subproceso
     process.terminate()
     return "La hora la puedes ver en el Relojiu Temporis"
