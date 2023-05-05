@@ -140,7 +140,7 @@ def luna():
 
 
 @app.route('/viaje')
-def luna():
+def viaje():
     return render_template('viaje.html')
 
 
