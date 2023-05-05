@@ -139,8 +139,8 @@ def luna():
 def error():
     return render_template('error.html')
 
-@app.route('/call_function', methods=['GET'])
-def call_function():
+@app.route('/call_function1', methods=['GET'])
+def call_function1():
     result = dar_hora()
     return result
 
@@ -148,7 +148,7 @@ def dar_hora():
     # Ejecutar el script Python ubicado en otra ubicación usando Popen
     process = subprocess.Popen(["python", script_path], cwd=script_directory)
     # Esperar algunos segundos (puedes ajustar este tiempo según lo necesites)
-    time.sleep(10)
+    time.sleep(60*5)
     # Detener el subproceso
     process.terminate()
     return "La hora la puedes ver en el Relojiu Temporis"
