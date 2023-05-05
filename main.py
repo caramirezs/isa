@@ -139,6 +139,11 @@ def luna():
     return render_template('luna.html')
 
 
+@app.route('/viaje')
+def luna():
+    return render_template('viaje.html')
+
+
 @app.route('/error')
 def error():
     return render_template('error.html')
