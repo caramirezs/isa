@@ -157,7 +157,7 @@ def dar_hora():
 
 
 @app.route('/call_function2', methods=['GET'])
-def call_function1():
+def call_function2():
     result = pista_biblioteca()
     return result
 
