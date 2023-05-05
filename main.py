@@ -9,7 +9,7 @@ from datetime import datetime
 
 script_path = "/home/caramirezs/rpi-rgb-led-matrix/my_clock.py"
 script_path_2 = "/home/caramirezs/rpi-rgb-led-matrix/mensaje1.py"
-script_path_3 = "/home/caramirezs/rpi-rgb-led-matrix/bindings/python/samples/runtext.py slitherin"
+script_path_3 = "/home/caramirezs/rpi-rgb-led-matrix/bindings/python/samples/runtext.py"
 script_directory = os.path.dirname(script_path)
 
 
