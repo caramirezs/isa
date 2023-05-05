@@ -3,6 +3,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
+import subprocess
+import time
+
+script_path = "~/rpi-rgb-led-matrix/my_clock.py"
+
 
 app = Flask(__name__)
 
@@ -135,12 +140,18 @@ def error():
 
 @app.route('/call_function', methods=['GET'])
 def call_function():
-    result = funcion()
+    result = dar_hora()
     return result
 
-def funcion():
+def dar_hora():
+    # Ejecutar el script Python ubicado en otra ubicación usando Popen
+    process = subprocess.Popen(["python", script_path])
 
+    # Esperar algunos segundos (puedes ajustar este tiempo según lo necesites)
+    time.sleep(10)
 
+    # Detener el subproceso
+    process.terminate()
     return "La hora la puedes ver en el Relojiu Temporis"
 
 
