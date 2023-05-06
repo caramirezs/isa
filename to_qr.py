@@ -1,6 +1,6 @@
 import qrcode
 
-url = "https://drive.google.com/file/d/1XJZsXXenerlsedsPK3yNf888Hbfc296_/view?usp=sharing" # reemplaza esta dirección web por la que quieras convertir en QR
+url = "https://drive.google.com/file/d/1YGltgWt_c-uYhc1qFsBHSojogS_WbJzv/view?usp=sharing" # reemplaza esta dirección web por la que quieras convertir en QR
 
 img = qrcode.make(url)
-img.save("qr_regalo_fin.png") # guarda el código QR en un archivo png
+img.save("static/documento.png") # guarda el código QR en un archivo png
