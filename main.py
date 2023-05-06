@@ -195,7 +195,7 @@ def pista_pasaporte():
         now = datetime.now()
         minutes = now.minute
 
-        if minutes % 1 == 0:
+        if minutes % 20 == 0:
             process = subprocess.Popen(["python", script_path_3], cwd=script_directory)
             time.sleep(60)
             process.terminate()
